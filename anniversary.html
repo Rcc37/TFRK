@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Together Forever 🧿 Rahul & Kaajal</title>
+
+    <!-- Confetti Script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(to bottom, #d8b4f8, #f3d1f4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: auto;
+        position: relative;
+      }
+
+      /* Moon Glow Effect */
+      body::before {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          #ffffff88,
+          #e0b3ff22 60%,
+          transparent 80%
+        );
+        top: 10%;
+        left: 60%;
+        filter: blur(100px);
+        z-index: 0;
+      }
+
+      .card {
+        background-color: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 650px;
+        width: 90%;
+        z-index: 1;
+        position: relative;
+      }
+
+      h1 {
+        color: #a855f7;
+        font-size: 2.3rem;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+
+      p {
+        color: #333;
+        font-size: 1.1rem;
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
+
+      .image-container {
+        width: 100%;
+        max-height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin-bottom: 30px;
+      }
+
+      .image-container img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        border-radius: 20px;
+      }
+
+      button {
+        background-color: #a855f7;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 1rem;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #9333ea;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      #love-message {
+        font-size: 2rem;
+        color: #ff1493;
+        margin-top: 20px;
+        animation: pulse 1s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="card">
+      <h1>Happy 1st Month Anniversary to My lovely Jucyy Pine-Apple ❤️</h1>
+
+      <p>
+        Hi Kaajal, ek mahina saalon jaisa lag raha hai it's like I’ve known you
+        forever. It truly feels like our souls have been connected for years. 💜
+      </p>
+
+      <p>
+        Tum mere liye sab kuch ho meri janu(Sun & Moon). I say this again and
+        again, but I can look into your sundar aankhein my whole life without
+        blinking. Your killer smile breaks my heart in the most beautiful way,
+        and I just lose myself in them.
+      </p>
+
+      <p>
+        Janu, I will give you everything — because you deserve everything, my
+        love(♾️ Love, ♾️ Respect, ♾️ Strength, ♾️ Motivation, ♾️ Happiness ,♾️
+        everything…) and of course, myself too (dil toh sabse pehle diya tha).
+      </p>
+
+      <p>
+        I want to see the whole world with you, have 2-3 beautiful kids, and
+        live the dream life we talk about — private jets, Porsche, a big
+        luxurious bungalow 🏡✨🧿. And give our parents the best life too.
+      </p>
+
+      <p>
+        I’ll always stand beside you as your strength. Don’t ever underestimate
+        yourself. I see the fire, hard work, and the passion for fashion design
+        in you and you’re the best at what you do fuck chichelia laudi. I'm very
+        proud of you, love. ❤️
+      </p>
+
+      <p>
+        I’m always here for you, our parents, didi & laki, Bruno and Blush. Ek
+        janam kya saat janam tak I’ll stay with you as your life partner, your
+        husband, your strength, and give you infinite love. ❤️🧿
+      </p>
+
+      <div class="image-container">
+        <img src="Janu.JPG" alt="Janu Pic" />
+      </div>
+
+      <button onclick="revealLove()">Rahul's Message</button>
+
+      <div id="love-message" class="hidden">
+        I love you ♾️ Kaajal forever and ever till 7 Janam ❤️🫶 Marry Me 💍
+      </div>
+    </div>
+
+    <script>
+      function revealLove() {
+        const msg = document.getElementById("love-message");
+        msg.classList.remove("hidden");
+        launchConfetti();
+      }
+
+      function launchConfetti() {
+        const duration = 2 * 1000;
+        const end = Date.now() + duration;
+
+        (function frame() {
+          confetti({
+            particleCount: 7,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+          });
+          confetti({
+            particleCount: 7,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+          });
+
+          if (Date.now() < end) {
+            requestAnimationFrame(frame);
+          }
+        })();
+      }
+    </script>
+  </body>
+</html>
